@@ -76,8 +76,10 @@ public class Player : MonoBehaviour {
 
     void spawnCubes() {
 
+        
+
         if (Input.GetKeyDown(KeyCode.Q)) {
-            Instantiate(selectedCube, transform.position + (transform.forward * 2), transform.rotation);
+            Instantiate(selectedCube, transform.position + (transform.forward * 2), selectedCube.transform.rotation);
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha1))

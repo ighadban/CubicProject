@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour {
 
     void SaveCubes()
     {
-        StreamWriter sw = new StreamWriter("d:\\test.csv");                       //  Application.persistentDataPath+"/CDriveDirs.txt");
+        StreamWriter sw = new StreamWriter("cubelocation.csv");          //  "d:\\test.csv" Application.persistentDataPath + "/cubelocation.csv"
         foreach (GameObject cubes in cubes0)
         {
             sw.Write("Cube0");
@@ -93,7 +93,7 @@ public class GameManager : MonoBehaviour {
     }
     void LoadCubes()
     {
-        StreamReader sr = new StreamReader("d:\\test.csv");                       //  Application.persistentDataPath+"/CDriveDirs.txt");
+        StreamReader sr = new StreamReader("cubelocation.csv");    //"d:\\test.csv" Application.persistentDataPath + "/cubelocation.csv" 
         Vector3 pos = new Vector3();
         float angle = 0.0f;
         string type;
