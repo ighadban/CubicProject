@@ -20,10 +20,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4946987816857032}
   - component: {fileID: 33294983229621878}
-  - component: {fileID: 136714913897861620}
   - component: {fileID: 23601897818506356}
   - component: {fileID: 114576893153596754}
   - component: {fileID: 54276304106684580}
+  - component: {fileID: 64386999509657918}
   m_Layer: 10
   m_Name: Cylinder
   m_TagString: Cube2
@@ -97,6 +97,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!64 &64386999509657918
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1144533314719312}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &114576893153596754
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -117,16 +131,3 @@ MonoBehaviour:
   fireTime: 1
   beenPickedUp: 0
   testvelocity: 0
---- !u!136 &136714913897861620
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1144533314719312}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
