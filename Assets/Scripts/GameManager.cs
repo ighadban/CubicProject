@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour {
     public GameObject[] cubes1;
     public GameObject[] cubes2;
     public GameObject[] cubes3;
+    public GameObject[] cubes4;
     //public float maxCubes = 60;
 
     // Use this for initialization
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour {
         cubes1 = GameObject.FindGameObjectsWithTag("Cube1");
         cubes2 = GameObject.FindGameObjectsWithTag("Cube2");
         cubes3 = GameObject.FindGameObjectsWithTag("Cube3");
+        cubes4 = GameObject.FindGameObjectsWithTag("Cube4");
 
 
     }
@@ -88,6 +90,18 @@ public class GameManager : MonoBehaviour {
             sw.Write(cubes.transform.eulerAngles.y);
             sw.Write("\n");
         }
+        foreach (GameObject cubes in cubes4) {
+            sw.Write("Cube4");
+            sw.Write(",");
+            sw.Write(cubes.transform.position.x);
+            sw.Write(",");
+            sw.Write(cubes.transform.position.y);
+            sw.Write(",");
+            sw.Write(cubes.transform.position.z);
+            sw.Write(",");
+            sw.Write(cubes.transform.eulerAngles.y);
+            sw.Write("\n");
+        }
         sw.Close();
         //sw.Flush();
 
@@ -118,6 +132,9 @@ public class GameManager : MonoBehaviour {
             }
             if (type == "Cube3") {
                 Instantiate(GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().cube3, pos, Quaternion.Euler(0.0f, angle, 0.0f));
+            }
+            if (type == "Cube4") {
+                Instantiate(GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().cube4, pos, Quaternion.Euler(0.0f, angle, 0.0f));
             }
 
         }

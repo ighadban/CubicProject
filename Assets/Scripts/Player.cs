@@ -12,6 +12,7 @@ public class Player : MonoBehaviour {
     public GameObject cube1;
     public GameObject cube2;
     public GameObject cube3;
+    public GameObject cube4;
 
     public GameObject selectedCube;
 
@@ -19,7 +20,7 @@ public class Player : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+        
 	}
 	
 	// Update is called once per frame
@@ -75,10 +76,9 @@ public class Player : MonoBehaviour {
     }
 
     void spawnCubes() {
-
         
 
-        if (Input.GetKeyDown(KeyCode.Q)) {
+        if (Input.GetMouseButtonDown(1)) {
             Instantiate(selectedCube, transform.position + (transform.forward * 2), selectedCube.transform.rotation);
         }
 
@@ -101,6 +101,11 @@ public class Player : MonoBehaviour {
         {
             selectedCube = cube3;
             cubeText = "Upright Rectangular Prism";
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            selectedCube = cube4;
+            cubeText = "Box";
         }
     }
 }

@@ -47,7 +47,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1820944618779028
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,7 +227,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!65 &65578242567869392
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -266,6 +266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 3
+  pickupSound: {fileID: 8300000, guid: c876eae4ae75d4548982b569d6d2c5eb, type: 3}
 --- !u!114 &114534095974597734
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -300,9 +301,10 @@ MonoBehaviour:
   cube1: {fileID: 1518197814195534, guid: eca21bfda5d3bc4448e22898c44df645, type: 2}
   cube2: {fileID: 1144533314719312, guid: 9b5537bff76684e49a3ff0b89a5cba87, type: 2}
   cube3: {fileID: 1957862053278928, guid: 961a72b40f323da4abd825f479689387, type: 2}
+  cube4: {fileID: 1590688154194720, guid: c1780b3f94e0f3e4c8a427d799ee0732, type: 2}
   selectedCube: {fileID: 1044178966920212, guid: 83f11850fd6a2ee4b867b67d37652d63,
     type: 2}
-  cubeText: 
+  cubeText: Cube
 --- !u!124 &124080093838133370
 Behaviour:
   m_ObjectHideFlags: 1

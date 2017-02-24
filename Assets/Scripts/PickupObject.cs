@@ -9,8 +9,8 @@ public class PickupObject : MonoBehaviour {
     bool carrying;
     GameObject carriedObject;
     public float distance = 3;
-    //AudioManager audioManager;
-    //public AudioClip pickupSound;
+    AudioManager audioManager;
+    public AudioClip pickupSound;
     //Public Materials
     /*public Material goodCube;
     public Material goodAlpha;
@@ -21,7 +21,7 @@ public class PickupObject : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         mainCamera = Camera.main;
-        //audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
 	}
 	
 	// Update is called once per frame
@@ -42,16 +42,16 @@ public class PickupObject : MonoBehaviour {
         
         o.transform.position = Vector3.Lerp(o.transform.position, mainCamera.transform.position + mainCamera.transform.forward * distance, Time.deltaTime * 5);
 
-        if (Input.GetMouseButton(0)) {
+        if (Input.GetKey(KeyCode.E)) {
             o.transform.Rotate(Vector3.up, Time.deltaTime * 60);
-        } else if (Input.GetMouseButton(1)) {
+        } else if (Input.GetKey(KeyCode.Q)) {
             o.transform.Rotate(-Vector3.up, Time.deltaTime * 60);
         }
 
     }
 
     void Pickup() {
-        if (Input.GetKeyDown(KeyCode.E)) {
+        if (Input.GetMouseButtonDown(0)) {
             int x = Screen.width / 2;
             int y = Screen.height / 2;
 
@@ -67,14 +67,14 @@ public class PickupObject : MonoBehaviour {
                     p.GetComponent<MeshRenderer>().material = p.GetComponent<Pickupable>().alpha;
                     p.transform.rotation = Quaternion.identity;
                     p.GetComponent<Pickupable>().beenPickedUp = true;
-                    //audioManager.PlayAudio(pickupSound);
+                    audioManager.PlayAudio(pickupSound);
                 }
             }
         }
     }
 
     void CheckDrop() {
-        if (Input.GetKeyDown(KeyCode.E)) {
+        if (Input.GetMouseButtonDown(0)) {
             DropObject();
         }
     }
